@@ -1,0 +1,10 @@
+version: '3'
+services:
+  cloud9:
+    build: .
+    ports:
+     - "3000:3000"
+    restart: always
+    command: "/usr/local/bin/init.sh"
+    volumes:
+       - ./scripts/init.sh:/usr/local/bin/init.sh

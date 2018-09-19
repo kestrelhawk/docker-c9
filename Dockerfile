@@ -1,5 +1,4 @@
-FROM debian:latest
-MAINTAINER Ankit R Gadiya <me@argp.in>
+FROM debian:stretch
 
 # Installation 
 RUN apt-get update \
@@ -25,8 +24,4 @@ RUN apt-get update \
 	&& apt-get autoremove -y
 
 # Script
-COPY init.sh ~/.init.sh
-
-# Server
-EXPOSE 3000
-CMD ["bash", "~/.init.sh"]
+COPY ./scripts/init.sh /usr/local/bin/
